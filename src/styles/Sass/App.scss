@@ -1,3 +1,81 @@
+//**** Application variables ***//
+
+$background-yellow: #f8e72a;
+$background-gray: #ebebeb;
+$color-text-input: #5f5a5a;
+
+
+/* ***** Class to extend ****** //
+ these classes are not rendered in the CSS unless they are understood
+  this avoids making the css heavy */
+
+%box-shadow-header{
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(219,212,219,1);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(219,212,219,1);
+    box-shadow: 0px 2px 8px 0px rgba(219,212,219,1);
+}
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Classes of the App
+
 body {
-    background-color: rgb(194, 155, 204);
+    width: 100vw;
+    height: 100vh;
+}
+
+/*  I am use the selector of id, because this prevents styles from being overwritten,
+ since by specificity the id weighs more than the class and is unique*/
+
+#header-search {
+    background-color: $background-yellow;
+    @extend %box-shadow-header;
+    width: 100%; //  I use unit of measure in percent because is adjusted according to the parent and make reponsive
+    @extend %flex-center;
+    height: 80px;
+    #logo {
+        height: 40.99px;
+        width: 55.99px;
+        margin: 0 20px;
+    }
+
+    #input-search {
+        display: flex;
+        width: 70%;
+
+        #search {
+            height: 40.99px;
+            width: 80%;
+            border-style: none;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            box-sizing: border-box;
+            padding: 0 15px;
+            color: $color-text-input;
+            font-size: 16px;
+        }
+        input:focus-visible {
+            border: 1px solid blue;
+        }
+        
+        #container-icon-search {
+            height: 40.99px;
+            width: 50px;
+            background-color: $background-gray;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border: 1px solid white;
+            box-sizing: border-box;
+            @extend %flex-center;
+            cursor: pointer;
+        }
+
+    }
+}
+#home {
+    background-color: $background-gray;
+    height: 100vh;
 }
