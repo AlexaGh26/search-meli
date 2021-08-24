@@ -3,8 +3,9 @@ import HeaderComponent from '../../components/header/header';
 
 const HomePage = () => {
     return (<>
-        <section id="home" >
+        <section className="home" >
             <HeaderComponent> </HeaderComponent>
+
             
         </section>
     </>)

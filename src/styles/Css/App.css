@@ -1,13 +1,13 @@
 /* ***** Class to extend ****** //
  these classes are not rendered in the CSS unless they are understood
-  this avoids making the css heavy */
-#header-search {
+  this avoids making the css heavy*/
+.header-search {
   -webkit-box-shadow: 0px 2px 8px 0px #dbd4db;
   -moz-box-shadow: 0px 2px 8px 0px #dbd4db;
   box-shadow: 0px 2px 8px 0px #dbd4db;
 }
 
-#header-search #input-search #container-icon-search, #header-search {
+.header-search .input-search .container-icon-search, .header-search {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,23 +18,21 @@ body {
   height: 100vh;
 }
 
-/*  I am use the selector of id, because this prevents styles from being overwritten,
- since by specificity the id weighs more than the class and is unique*/
-#header-search {
+.header-search {
   background-color: #f8e72a;
   width: 100%;
   height: 80px;
 }
-#header-search #logo {
+.header-search .logo {
   height: 40.99px;
   width: 55.99px;
   margin: 0 20px;
 }
-#header-search #input-search {
+.header-search .input-search {
   display: flex;
   width: 70%;
 }
-#header-search #input-search #search {
+.header-search .input-search .search {
   height: 40.99px;
   width: 80%;
   border-style: none;
@@ -45,21 +43,20 @@ body {
   color: #5f5a5a;
   font-size: 16px;
 }
-#header-search #input-search input:focus-visible {
-  border: 1px solid blue;
+.header-search .input-search input {
+  outline: none;
 }
-#header-search #input-search #container-icon-search {
+.header-search .input-search .container-icon-search {
   height: 40.99px;
   width: 50px;
   background-color: #ebebeb;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  border: 1px solid white;
   box-sizing: border-box;
   cursor: pointer;
 }
 
-#home {
+.home {
   background-color: #ebebeb;
   height: 100vh;
 }
