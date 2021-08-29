@@ -19,7 +19,7 @@ const DetailsPage = () => {
                         <section className="container-img-details">
                             <img id="img-product-details" className="img-product-details" alt="img-product" src={productCtx.details.item.thumbnail} />
                             <h3>Descripción del producto</h3>
-                            <p>{productCtx.details.item.dataDescription}}</p>
+                            <p>{productCtx.details.item.dataDescription}</p>
                         </section>
                         <section className="container-title">
                             <p>{productCtx.details.item.condition ? 'Nuevo - ' : ''}{productCtx.details.item.sold_quantity} Vendidos</p>
