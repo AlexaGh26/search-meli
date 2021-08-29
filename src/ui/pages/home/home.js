@@ -1,8 +1,12 @@
 import React, { useContext } from "react";
 import ProductContext from "../../../context/product.context";
 import LayoutPage from "../layout/layout";
+import { useHistory } from "react-router-dom";
 
 const HomePage = () => {
+
+  const history = useHistory();
+
   // Pasando el contexto a una variable para usarlo en mi componente
   const productCtx = useContext(ProductContext);
 
@@ -11,13 +15,19 @@ const HomePage = () => {
     return `$ ${new Intl.NumberFormat().format(price)}`
   }
 
+  function redirectDetails(idProduct) {
+    productCtx.getDetails(idProduct);
+    history.push(`/items/${idProduct}`);
+  }
+
   /* En el Html le puse los id a todos los elementos para que React sepa exactamente cual elemento actualizar
    al hacer un cambio, tambien por buena práctica*/
   return (
     <LayoutPage>
       <section id="container-cards" className="container-cards">
-        {productCtx.information && productCtx.information.items.map((product, index) => {
-          return <div id="card" className="card" >
+        <main>
+          {productCtx.information && productCtx.information.items.map((product) => {
+            return <div id="card" className="card" onClick={() => redirectDetails(product.id)}>
             <section id="container-imgs" className="container-imgs">
               <img id="img-product" className="img-product" alt="ima-product" src={product.picture} />
             </section>
@@ -31,8 +41,11 @@ const HomePage = () => {
             <section id="container-city">
               <p>{product.city_name}</p>
             </section>
+            <div className="divider"></div>
           </div>
+
         })}
+        </main>
       </section>
     </LayoutPage>
   );

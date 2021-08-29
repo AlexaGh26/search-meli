@@ -10,7 +10,7 @@ const MELI_API_SELLER =
 const MELI_API_CATEGORIES =
     "https://api.mercadolibre.com/sites/MLA/search?category=";
 
-// Endpoint para consultar el resultado de la bsuqueda
+// Endpoint para consultar el resultado de la busqueda
 app.get("/api/items", async (req, res) => {
     // object y array destructurings para armar el cuerpo del response para el resultado de la busqueda
     const { q } = req.query;
@@ -35,7 +35,7 @@ app.get("/api/items", async (req, res) => {
             city_name
         })
     );
-
+    // Creando el objeto de mi response
     const response = {
         author: {
             name: "Alexandra",

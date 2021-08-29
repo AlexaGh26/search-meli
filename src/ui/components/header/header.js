@@ -3,7 +3,7 @@ import ProductContext from "../../../context/product.context";
 import { useHistory } from "react-router-dom";
 const HeaderComponent = () => {
   const productCtx = useContext(ProductContext);
-  let history = useHistory();
+  const history = useHistory();
 
   /*Función que redirecciona de la pagina searcher donde solo aparece el buscardor a
   la pagina de Home/items donde se ve el buscador con los resultados*/

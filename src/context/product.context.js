@@ -6,10 +6,10 @@ import { createContext } from "react";
 const ProductContext = createContext({
   lookupValue: '',
   information: '',
-  match: Boolean,
+  details: '',
   getlookUpValue: (value) => {},
   getSearchResults: (value) => { },
-  setMatch: () => { }
+  getDetails: (value) => { }
 });
 
 export default ProductContext;

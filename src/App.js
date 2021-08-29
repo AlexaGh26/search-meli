@@ -6,19 +6,20 @@ import HomePage from "./ui/pages/home/home";
 import DetailsPage from "./ui/pages/details/detail";
 import SearcherPage from "./ui/pages/searcher/searcher";
 
+//Esta es la entrada de mi App y aquí tambien configurpé las rutas usando React Router
 function App() {
   return (
     <ProductState>
       <Router>
         <Switch>
-          <Route path="/items">
+          <Route exact path="/">
+            <SearcherPage></SearcherPage>
+          </Route>
+          <Route exact path="/items">
             <HomePage></HomePage>
           </Route>
-          <Route path="/details">
+          <Route exact path="/items/:id">
             <DetailsPage></DetailsPage>
-          </Route>
-          <Route path="/">
-            <SearcherPage></SearcherPage>
           </Route>
         </Switch>
       </Router>

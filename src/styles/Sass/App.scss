@@ -20,7 +20,6 @@ $color-text-input: #5f5a5a;
   align-items: center;
 }
 
-
 body {
   height: 100vh;
   background-color: $background-gray;
@@ -33,6 +32,7 @@ body {
   @extend %box-shadow-header;
   position: fixed;
   width: 100%;
+  z-index: 10;
 
   .content {
     width: 70%; //  Uso porcentajes para que se ajuste al padre que lo contiene y se comporte de forma responsive
@@ -81,8 +81,6 @@ body {
   }
 }
 
-
-
 // ********** styles component home ****************//
 
 .container-cards {
@@ -90,54 +88,69 @@ body {
   width: 100%;
   padding-top: 100px;
 
-  .card {
+  main {
+    background-color: white;
+    border-radius: 5px;
     width: 70%;
     margin: auto;
-    background-color: white;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    padding: 15px;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 25% 55% 20%;
-    grid-template-rows: 100%;
 
-    .container-imgs {
-      @extend %flex-center;
+    .card {
+      width: 100%;
+      background-color: transparent;
+      padding: 15px;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 25% 55% 20%;
+      grid-template-rows: 100%;
+      cursor: pointer;
+      position: relative;
 
-      .img-product {
-        height: 200px;
-        width: 200px;
-        border-radius: 5px;
+      .container-imgs {
+        @extend %flex-center;
+
+        .img-product {
+          height: 200px;
+          width: 200px;
+          border-radius: 5px;
+        }
       }
-    }
-    .container-information {
-      margin: 0 5px;
-      padding: 0 10px;
+      .container-information {
+        margin: 0 5px;
+        padding: 0 10px;
 
-      .price {
+        .price {
           font-size: 22px;
-      }
+        }
 
-      .name-product {
-        width: 80%;
+        .name-product {
+          width: 80%;
+        }
       }
-    }
-    .icon-shipping{
+      .icon-shipping {
         margin: 0 10px;
         margin-top: -1;
+      }
+      .divider {
+        width: 92%;
+        height: 2px;
+        background-color: $background-gray;
+        position: absolute;
+        left: 35px;
+        bottom: 0;
+      }
     }
-    
   }
 }
-
+// Media query para que la imagen se ajuste al disminuir el ancho de la pantalla, que no se esborde
 @media (max-width: 1135px) {
   .container-cards {
-    .card {
-      .container-imgs {
-        .img-product {
-          height: 100% !important;
-          width: 100%;
+    main {
+      .card {
+        .container-imgs {
+          .img-product {
+            height: 100%;
+            width: 100%;
+          }
         }
       }
     }
