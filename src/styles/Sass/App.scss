@@ -3,6 +3,7 @@
 $background-yellow: #f8e72a;
 $background-gray: #ebebeb;
 $color-text-input: #5f5a5a;
+$color-buttons: #3483fa;
 
 /* ***** Class to extend ****** //
  Estas clases creadas con el simbolo % se utilizan así para que al compilarse 
@@ -156,3 +157,63 @@ body {
     }
   }
 }
+
+// ************ Estilos componente Details ****************
+.container-details {
+  padding-top: 100px;
+
+  .card-details {
+    background-color: white;
+    border-radius: 5px;
+    width: 70%;
+    margin: auto;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .container-img-details {
+      width: 68%;
+      .img-product-details {
+        width: 100%;
+        height: 400px;
+      }
+
+    }
+    
+    .container-title {
+      padding: 20px 0px;
+      width: 30%;
+
+      .price-details { 
+        font-size: 35px;
+
+      }
+      .button-details {
+        border-style: none;
+        background-color: $color-buttons;
+        width: 200px;
+        height: 40px;
+        border-radius:5px;
+        color: white;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 965px) {
+  .container-details {
+    .card-details {
+      .container-img-details {
+        width: 100%;
+      }
+      .container-title {
+        width: 100%;
+      }
+    }
+  
+  }
+}
+

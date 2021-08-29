@@ -59,8 +59,8 @@ app.get("/api/items/:idProduct", async (req, res) => {
             `${MELI_API_DESCRIPTION}${idProduct}/description`
         );
         // Object destructuring para la creacion del cuerpo del response
-        const { id, title, price, currency_id, pictures: { url: picture }, condition, sold_quantity,
-            shipping: { free_methods: { free_shipping_flag } } } = data;
+        const { id, title, price, currency_id, thumbnail, condition, sold_quantity,
+            shipping } = data;
 
         const response = {
             author: {
@@ -74,9 +74,9 @@ app.get("/api/items/:idProduct", async (req, res) => {
                     currency: currency_id,
                     amount: price
                 },
-                picture,
+                thumbnail,
                 condition,
-                free_shipping: free_shipping_flag,
+                shipping,
                 sold_quantity,
                 dataDescription: dataDescription.plain_text
             },

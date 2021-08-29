@@ -25,7 +25,7 @@ const HeaderComponent = () => {
           <section className="input-search">
             <input
               id="search"
-              placeholder="Ingrese lo que desea buscar"
+              placeholder="Nunca dejes de buscar"
               className="search"
               onKeyUp={(e) => e.key === "Enter" && amendSearch()}
               onChange={(e) => productCtx.getlookUpValue(e.target.value)}

@@ -10,7 +10,7 @@ const LayoutPage = ({ children }) => {
         <section id="section-searcher" className="layout">
             <HeaderComponent></HeaderComponent>
         </section>
-        <main id="contenido" >{children}</main>
+        <main id="contenido" className="contenido" >{children}</main>
     </>)
 }
 export default LayoutPage;
