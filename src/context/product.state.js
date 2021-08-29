@@ -2,7 +2,7 @@ import { useReducer } from "react";
 import productService from "../services/product";
 import ProductContext from "./product.context";
 import productReducer, {
-  GET_LOOKUP_VALUE, SAVE_INFORMATION, NO_MATCH,
+  GET_LOOKUP_VALUE, SAVE_INFORMATION,
 } from "./product.reducer";
 
 const ProductState = ({ children }) => {
@@ -13,38 +13,26 @@ const ProductState = ({ children }) => {
 
   const [state, dispatch] = useReducer(productReducer, initialState);
 
-
+  // Función para guardar el value del input en mi contexto
   const getlookUpValue = (value) => {
     dispatch({ type: GET_LOOKUP_VALUE, payload: value });
   };
 
-  const setMatch = () => {
-    dispatch({ type: NO_MATCH, payload: undefined });
-  }
-
+  /*Función para llamar al servicio getBySearch y guardar lo que retorne en el contexto
+   Uso el contexto para tener la información disponible en toda mi App*/
   const getSearchResults = async (search) => {
+    const response = await productService.getBySearch(search);
+    dispatch({ type: SAVE_INFORMATION, payload: response });
 
-    const response = await productService.getBySearch(search).then(({ data: { results } }) => {
-      dispatch({ type: SAVE_INFORMATION, payload: results });
-      dispatch({ type: NO_MATCH, payload: true });
-    })
-    if (response === undefined) {
-      dispatch({ type: NO_MATCH, payload: false });
-    }
-    console.log(response);
   }
-
-
 
   return (
     <ProductContext.Provider
       value={{
         lookupValue: state.lookupValue,
         information: state.information,
-        match: state.match,
         getlookUpValue,
         getSearchResults,
-        setMatch,
       }}
     >
       {children}

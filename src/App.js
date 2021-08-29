@@ -11,7 +11,7 @@ function App() {
     <ProductState>
       <Router>
         <Switch>
-          <Route path="/home">
+          <Route path="/items">
             <HomePage></HomePage>
           </Route>
           <Route path="/details">

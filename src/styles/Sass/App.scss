@@ -1,12 +1,12 @@
-//**** Application variables ***//
+//**** Variables de mi app ***//
 
 $background-yellow: #f8e72a;
 $background-gray: #ebebeb;
 $color-text-input: #5f5a5a;
 
 /* ***** Class to extend ****** //
- these classes are not rendered in the CSS unless they are understood
-  this avoids making the css heavy*/
+ Estas clases creadas con el simbolo % se utilizan así para que al compilarse 
+ el sass a css no se compilen hasta que no sean extendidas, esto evita que el css se cargue y ponga pesado*/
 
 %box-shadow-header {
   -webkit-box-shadow: 0px 2px 8px 0px rgba(219, 212, 219, 1);
@@ -20,14 +20,13 @@ $color-text-input: #5f5a5a;
   align-items: center;
 }
 
-// Classes of the App
 
 body {
   height: 100vh;
   background-color: $background-gray;
 }
 
-// ********** styles component header ****************//
+// ********** Estilos del componente Header ****************//
 
 .header-search {
   background-color: $background-yellow;
@@ -36,7 +35,7 @@ body {
   width: 100%;
 
   .content {
-    width: 70%; //  I use unit of measure in percent because is adjusted according to the parent and make reponsive
+    width: 70%; //  Uso porcentajes para que se ajuste al padre que lo contiene y se comporte de forma responsive
     @extend %flex-center;
     height: 80px;
     margin: auto;

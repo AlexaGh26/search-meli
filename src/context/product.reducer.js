@@ -2,6 +2,7 @@ export const GET_LOOKUP_VALUE = "GET_LOOKUP_VALUE";
 export const SAVE_INFORMATION = "SAVE_INFORMATION";
 export const NO_MATCH = "NO_MATCH";
 
+/* Este reducer es para crear las acciones y guardar la info que llegue como la configure */
 const productReducer = (state, action) => {
     const { payload, type } = action;
     
@@ -15,11 +16,6 @@ const productReducer = (state, action) => {
         return {
           ...state,
           information: payload,
-        };
-      case NO_MATCH:
-        return {
-          ...state,
-          match: payload,
         };
       default:
         return state;
